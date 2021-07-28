@@ -1,0 +1,32 @@
+@import '../../../../../color/color';
+.btn{
+    width: 35px;
+    height: 13px;
+    background: rgba($color: $green, $alpha: .9);
+    border-radius: 10px;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        height: 17px;
+        width: 17px;
+        border-radius: 50%;
+        background: $white;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        transform: translateX(18px);
+        transition: all .5s;
+    }
+    transition: all .5s;
+}
+
+.back{
+    &::before{
+        transform: translateX(0);
+        background: white;
+        border: 1px solid #ddd;
+    }
+    background: #ddd;
+}

@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +13,48 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.swiper-pagination-bullet-active{
+  background: #eb3971 !important;
+}
+
+.swiper-button-prev, .swiper-button-next{
+  width: 50px !important;
+  height: 50px !important;
+  background: rgba(255, 255, 255, .8);
+  border-radius: 50%;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, .15);
+  transition: all .5s;
+  transform: translateX(0%);
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+  background: #eb3971;
+}
+.swiper-button-next:hover:after, .swiper-button-prev:hover:after{
+  color: #fff !important;
+}
+.swiper-button-prev:hover{
+  transform: translateX(20%);
+}
+.swiper-button-next:hover{
+  transform: translateX(-20%);
+}
+.swiper-button-prev::after, .swiper-button-next::after{
+  font-size: 20px !important;
+  color: #33ba95 !important;
+  font-weight: bold;
+  transition: all .5s;
+}
+.swiper-container-3d .swiper-slide-shadow-left, .swiper-container-3d .swiper-slide-shadow-right{
+  background-image: linear-gradient(145deg, rgba(0,0,0, 0.2), rgba(0,0,0, 0.2)) !important;
+}
+
+.invalid input{
+  border-color: red !important;
 }

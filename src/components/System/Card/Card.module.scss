@@ -1,0 +1,45 @@
+@import '../../../color/color';
+.icon{
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    border: 2px solid $yellow;
+    border-radius: 16px;
+    position: relative;
+    svg{
+        color: $red;
+        font-size: 26px;
+        transition: all .5s;
+    }
+    &:hover{
+        border-color: $red;
+        svg{
+            color: $yellow;
+            animation: animated 2.5s alternate;
+        }
+    }
+}
+
+@keyframes animated {
+    0%{
+        transform: translate(0%, 0%);
+    }
+    20%{
+        transform: translate(-70%, -70%);
+    }
+    40%{
+        transform: translate(-70%, 70%);
+    }
+    60%{
+        transform: translate(70%, 70%);
+    }
+    80%{
+        transform: translate(70%, -70%);
+    }
+    100%{
+        transform: translate(0%, 0%);
+    }
+}

@@ -1,0 +1,78 @@
+@import '../../../color/color';
+.col{
+    display: flex;
+    flex-direction: column;
+    label{
+        margin: 0;
+        font-weight: bold;
+        font-size: 14px;
+        text-transform: capitalize;
+    }
+    line-height: 50px;
+    p{
+        color: red;
+        font-weight: bold;
+        font-size: 14px;
+    }
+}
+
+.btn{
+    button{
+        width: 100%;    
+        background: $red;
+        color: $white;
+        font-weight: bold;
+        &:hover{
+            background: $yellow;
+            
+        }
+    }
+    padding-top: 30px;
+}
+
+.loading{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba($color: #000000, $alpha: .5);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
+}
+
+.success__note{
+    transform: translateX(100%);
+    transition: all 1s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tps__back{
+    transform: translateX(0%);
+}
+.success__correct, .success__wrong{
+    svg{
+        font-size: 40px;
+        margin-right: 25px;
+        color: rgba($color: $green, $alpha: .75);
+
+    }
+}
+
+.success__wrong{
+    svg{
+        color: rgba($color: $red, $alpha: .75);
+    }   
+}

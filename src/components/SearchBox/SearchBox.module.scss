@@ -1,0 +1,12 @@
+.box{
+    position: relative;
+    svg{
+        position: absolute;
+        right: 0;
+        top: 40%;
+        transform: translateY(-50%);
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+@import '../color/color';
+.container{
+    input{
+        padding: 10px 20px;
+        border: none;
+        border-bottom: 1px solid $white;
+        color: $white;
+        background: transparent;
+        &::placeholder{
+            color: $white;
+        }
+        width: 100%;
+        &:focus{
+            outline: none;
+        }
+    }
+    .invalid{
+        input{
+            border-color: red;
+        }
+    }
+    label{
+        color: $white;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    margin: 20px 0px;
+}

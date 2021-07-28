@@ -1,0 +1,32 @@
+@import '../../color/color';
+.container{
+    margin: 0;
+    max-width: 100%;
+    background: linear-gradient(145deg, rgba($red, 0.85) 0%, rgba($yellow, 0.85) 100%) ,url('../../img/images/p1.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    padding-top: 50px;
+    h2{
+        color: $white;
+    }
+    background-position: center;
+    .title{
+        text-align: center;
+        color: $white;
+        font-size: 16px;
+        padding: 20px 0px;
+    }
+    p{
+        margin: 0;
+    }
+}
+.content-box{
+    max-width: 600px;
+    margin: 0 auto;
+}
+@media screen and (max-width: 772px){
+    .title{
+        font-size: 14px !important;
+    }
+}

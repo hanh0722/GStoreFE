@@ -1,0 +1,40 @@
+@import '../../color/color';
+.search-field{
+    padding: 20px;
+    box-shadow: 0px 2px 8px rgba($color: #000000, $alpha: .15);
+    label{
+        padding-bottom: 20px;
+        font-weight: bold;
+        font-size: 20px;
+        text-transform: capitalize;
+    }
+    input{
+        width: 100%;
+        padding: 10px 20px 20px 0px;
+        border: none;
+        border-bottom: 2px solid $yellow;
+        transition: border .5s;
+        &:focus{
+            outline: none;
+        }
+    }
+    border-radius: 18px;
+    svg{
+        color: gray;
+        transition: color .5s;
+    }
+    &:hover{
+        input{
+            border-color: $blue;
+        }
+        svg{
+            color: $blue;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .search-field{
+        margin-top: 50px !important;
+    }
+}

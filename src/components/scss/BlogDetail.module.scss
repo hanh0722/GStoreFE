@@ -1,0 +1,19 @@
+@import '../../color/color';
+.container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    img{
+        width: 100%;
+        height: auto;
+        &:not(:first-child){
+            padding-top: 50px;
+        }
+    }
+    .content{
+        padding-top: 50px;
+        white-space: pre-wrap;
+    }
+    p{
+        margin: 0;
+    }
+}

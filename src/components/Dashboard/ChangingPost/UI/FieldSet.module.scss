@@ -1,0 +1,33 @@
+@import '../../../../color/color';
+.form{
+    &>.row{
+        div{
+        width: 100%;
+        }
+        margin-bottom: 30px;
+    }
+    fieldset{
+        border-color: #ddd !important;
+        border-radius: 10px;
+    }
+}
+
+.invalid{
+    fieldset{
+        border-color: red !important;
+    }
+}
+
+.error-text{
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.loading-spinner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+

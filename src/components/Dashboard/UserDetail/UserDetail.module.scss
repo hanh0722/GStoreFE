@@ -1,0 +1,80 @@
+@import '../../../color/color';
+.input{
+    display: flex;
+    flex-direction: column;
+    input{
+        width: 100%;
+        border: 1px solid #ddd;
+        padding: 6px 16px;
+        border-radius: 10px;
+        transition: border-color .5s;
+        &:focus{
+            outline: none;
+        }
+        &:hover{
+            border-color: $yellow;
+        }
+    }
+    padding-top: 30px;
+    label{
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size: 14px;
+    }
+    &:last-child{
+        padding-bottom: 30px;
+    }
+}
+.col button{
+    width: 100%;
+    margin-top: 30px;
+}
+.invalid{
+    margin: 0;
+    color: red;
+    font-weight: bold;
+    padding-top: 15px;
+    font-size: 14px;
+}
+.row__lock{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn__submit{
+    background: $yellow !important;
+    &:hover{
+        background: $yellow !important;
+    }
+    color: $white !important;
+    font-weight: bold !important;
+}
+.invalid-btn{
+    background: #ddd !important;
+    cursor: not-allowed;
+    color: black !important;
+}
+.loading-upload{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    right: 0;
+    background: rgba($color: #000000, $alpha: .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+}
+@media screen and (max-width: 768px) {
+    .col{
+        margin-top: 50px;
+    }
+}

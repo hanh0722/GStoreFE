@@ -1,0 +1,92 @@
+@import '../../../color/color';
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table{
+    width: 100%;
+}
+
+.user-tb{
+    width: 100%;
+    th{
+        &:first-child{
+            width: 50%;
+        }
+        text-transform: capitalize;
+    }
+    td, th{
+        padding: 16px;
+    }
+    tr{
+        border-bottom: 1px solid #ddd;
+        position: relative;
+        overflow: hidden;
+        &:hover{
+            .row{
+                visibility: visible;
+                transform: translateY(0);
+                z-index: 3;
+                opacity: 1;
+            }
+        }
+    }
+    border-collapse: collapse;
+    th, td{
+        font-size: 15px;
+    }
+}
+.row{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 !important;
+    transition: all .5s ease-in-out;
+    transform: translateY(50%);
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba($color: $blue, $alpha: .2);
+    padding: 0px 10px !important;
+}
+.btn{
+    width: 40px;
+    height: 40px;
+    background: $yellow;
+    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    svg{
+        font-size: 20px;
+        color: $white;
+    }
+}
+.delete{
+    background: $red;
+}
+
+@media screen and (max-width: 576px){
+    .user-tb{
+        td, th{
+            padding: 20px;
+        }
+    }
+    .btn{
+        width: 30px;
+        height: 30px;
+        margin-left: 15px;
+        svg{
+            font-size: 15px;
+        }
+    }
+}
