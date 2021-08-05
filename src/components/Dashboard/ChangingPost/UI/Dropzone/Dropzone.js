@@ -3,18 +3,25 @@ import { useDropzone } from "react-dropzone";
 import styles from "./Dropzone.module.scss";
 import { faFileArchive } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDispatch } from "react-redux";
+import { changePostActions } from "../../../../redux-store/change-post";
 const Dropzone = (props) => {
+  const dispatch = useDispatch();
   const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
     accept: "image/jpeg, image/jpg, image/heic, image/png",
     maxFiles: 3,
   });
   const { onChangeHandler, array } = props;
   useEffect(() => {
-    if (acceptedFiles.length === 0) {
+    if(acceptedFiles.length === 0){
       return;
     }
+    const newImages = acceptedFiles.map(items =>{
+        return items.path;
+    })
+    dispatch(changePostActions.updateImages(newImages));
     onChangeHandler(acceptedFiles);
-  }, [acceptedFiles, onChangeHandler, array]);
+  }, [acceptedFiles, onChangeHandler, dispatch]);
   const files = acceptedFiles.map((file, index) => {
     return <img key={index} src={URL.createObjectURL(file)} alt="" />;
   });

@@ -141,10 +141,30 @@ const fileStorageEngine = multer.diskStorage({
 const upload = multer({ storage: fileStorageEngine });
 
 app.post("/api/images", upload.array("blog-images", 3), (req, res) => {
+
   res.json(req.files);
 });
 
-app.post("/api/upload", (req, res) => {});
+app.put("/api/upload", (req, res) => {
+  const {title, content1, image1, content2, image2, content3, image3, id} = req.body;
+  if(!title || !id){
+    return res.status(400).json('not validation');
+  }
+  db('blogs').where('id', '=', id)
+  .update({
+    title: title,
+    image1: image1,
+    image2: image2,
+    image3: image3,
+    content1: content1,
+    content2: content2,
+    content3: content3
+  }).then(data =>{
+    res.json(data[0]);
+  }).catch(err =>{
+    res.status(400).json('error');
+  })
+});
 
 app.get("/api/users", (req, res) => {
   db.select("*")

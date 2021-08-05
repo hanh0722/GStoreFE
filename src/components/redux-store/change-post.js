@@ -12,9 +12,7 @@ const changePostSlice = createSlice({
             state.information = action.payload
         },
         updateImages(state, action){
-            state.image1 = action.payload[0];
-            state.image2 = action.payload[1];
-            state.image3 = action.payload[2];
+            console.log(action.payload)
         },
         updateStatus(state, action){
             state.status = action.payload

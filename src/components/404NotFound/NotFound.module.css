@@ -1,0 +1,106 @@
+.container {
+  height: 100vh;
+  background: -webkit-linear-gradient(145deg, #37bb93 0%, #6dd5f2 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-transform: skewY(10deg);
+          transform: skewY(10deg);
+  -webkit-transform-origin: 100%;
+          transform-origin: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.error {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.error p {
+  margin: 0;
+}
+
+.error .text-error {
+  margin-right: 30px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(240, 187, 69, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 5px;
+}
+
+.error .text-error span {
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.error .content {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: capitalize;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.error .btn {
+  margin-top: 20px;
+  background: #eb3971;
+  font-weight: bold;
+  color: #fff;
+}
+
+.error .btn:hover {
+  background: #4bc7ed;
+}
+
+.error a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media screen and (max-width: 772px) {
+  .error {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .error .text-error {
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+}
+/*# sourceMappingURL=NotFound.module.css.map */

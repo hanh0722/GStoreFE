@@ -1,0 +1,124 @@
+.line {
+  width: 100%;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  height: 60px;
+  border-bottom: 1px solid #ddd;
+  text-align: justify;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.line .button {
+  width: 60px;
+  border-right: 1px solid #ddd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 60px;
+}
+
+.line .button div {
+  width: 20px;
+  height: 1px;
+  background: #4bc7ed;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.line .button div:last-child {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.line .right {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0px 10px;
+  width: calc(100% - 60px);
+}
+
+.content {
+  font-size: 15px;
+  font-weight: normal;
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  opacity: 0;
+  -webkit-transform: translateY(-20%);
+          transform: translateY(-20%);
+  text-align: justify;
+}
+
+.content-block {
+  visibility: visible !important;
+  padding: 20px;
+  height: auto;
+  opacity: 1;
+  background: #fff;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.animateButton div:first-child {
+  -webkit-transform: rotate(45deg) translateY(1px);
+          transform: rotate(45deg) translateY(1px);
+}
+
+.animateButton div:last-child {
+  -webkit-transform: rotate(-45deg) translateY(-1px) !important;
+          transform: rotate(-45deg) translateY(-1px) !important;
+}
+
+@media screen and (max-width: 772px) {
+  .line .right {
+    font-size: 16px;
+  }
+  .line .button div {
+    width: 25px;
+  }
+  .content {
+    font-size: 14px;
+  }
+  .content-block {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .line {
+    height: 50px;
+  }
+  .line .right {
+    font-size: 14px;
+  }
+  .line .button {
+    width: 50px;
+    height: 50px;
+  }
+  .content-block {
+    padding: 10px;
+  }
+}
+/*# sourceMappingURL=Line.module.css.map */
