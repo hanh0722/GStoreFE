@@ -1,0 +1,39 @@
+.container{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    h2{
+        font-weight: bold;
+        text-transform: capitalize;
+        span{
+            text-transform: uppercase;
+        }
+        text-align: center;
+        font-size: 35px;
+    }
+    line-height: 30px;
+    p{
+        color: gray;
+        padding: 20px 0px;
+        margin: 0;
+    }
+    .title{
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 772px){
+    .container{
+        h2{
+            font-size: 30px;
+        }
+    }
+}
+@media screen and (max-width: 670px) {
+    .container{
+        h2{
+            font-size: 25px;
+        }
+    }
+}
+

@@ -1,0 +1,48 @@
+@import '../../../../color/color';
+.box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .btn-delete{
+        margin-right: 15px;
+        background: $red;
+        &:hover{
+            background: $yellow;
+            color: $white !important;
+        }
+    }
+    .btn-cancel{
+        margin-left: 15px;
+        background: $yellow;
+        &:hover{
+            background: $red;
+            color: $white !important;
+        }
+    }
+    background: $white;
+    padding: 30px;
+    text-align: center;
+    .user{
+        color: $red;
+        font-weight: bold;
+    }
+    width: 50%;
+    border-radius: 10px;
+    .btn{
+        font-weight: bold !important;
+        color: $white !important;
+    }
+    z-index: 4;
+}
+
+@media screen and (max-width: 850px){
+    .box{
+        width: 75%;
+    }
+}

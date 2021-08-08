@@ -1,0 +1,16 @@
+@import "../../../color/color";
+.badge {
+  span {
+    font-size: 13px;
+    background: $green;
+    padding: 5px 8px;
+    border-radius: 18px;
+    color: $white;
+    font-weight: bold;
+  }
+}
+.locked{
+    span{
+        background: $red;
+    }
+}

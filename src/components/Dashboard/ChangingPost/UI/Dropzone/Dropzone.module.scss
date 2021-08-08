@@ -1,0 +1,37 @@
+@import '../../../../../color/color';
+
+.drop{
+    p{
+        margin: 0;
+        text-align: center;
+        color: gray;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+    border: 3px dashed $yellow;
+    .dropzone{
+        padding: 50px 20px;
+    }
+}
+.notify{
+    text-transform: none !important;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    svg{
+        font-size: 50px;
+        margin-bottom: 20px;
+        color: rgba($color: $red, $alpha: .75);
+    }
+}
+
+.images{
+    img{
+        width: 100%;
+        height: auto;
+        padding-top: 50px;
+    }
+}

@@ -1,0 +1,54 @@
+@import '../../color/color';
+.container{
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    line-height: 30px;
+    background:
+    linear-gradient(150deg, rgba($blue, 0.7) 0%, rgba($yellow, 0.7) 100%)
+    ,url('../../img/images/banner-cut.png');
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    background-attachment: fixed;
+    iframe{
+        width: 100%;
+        border-radius: 15px;
+    }
+    h2{
+        padding-bottom: 20px;
+        text-align: center;
+        font-weight: bold;
+        text-transform: capitalize;
+        color: $white;
+        span{
+            text-transform: uppercase;
+        }
+    }
+    padding: 50px 0px;
+}
+
+.row{
+    align-items: center;
+    .col-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .container{
+        h2{
+            font-size: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 772px){
+    .container{
+        h2{
+            font-size: 20px;
+        }
+    }
+}

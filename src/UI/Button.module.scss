@@ -1,0 +1,26 @@
+.button{
+    padding: 15px 40px;
+    background: #fff;
+    a{
+        color: black;
+    }
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 968px){
+    .button{
+        padding: 15px 25px;
+    }
+}
+@media screen and (max-width: 772px) {
+    .button{
+        padding: 15px 25px;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .button{
+        padding: 15px 20px;
+    }
+}

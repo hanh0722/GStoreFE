@@ -1,0 +1,103 @@
+@import '../../../color/color';
+.line{
+    width: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    transition: all 1s;
+    height: 60px;
+    border-bottom: 1px solid #ddd;
+    text-align: justify;
+    margin-bottom: 20px;
+    .button{
+        width: 60px;
+        border-right: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        div{
+            width: 20px;
+            height: 1px;
+            background: $blue;
+            &:last-child{
+                transform: rotate(90deg);
+            }
+            transition: all 1s;
+        }
+    }
+    cursor: pointer;
+    .right{
+        font-size: 16px;
+        font-weight: bold;
+        padding: 0px 10px;
+        width: calc(100% - 60px);
+    }
+}
+// padding-top: 20px
+.content{
+    font-size: 15px;
+    font-weight: normal;
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+    transition: all .5s;
+    opacity: 0;
+    transform: translateY(-20%);
+    text-align: justify;
+}
+.content-block{
+    visibility: visible !important;
+    padding: 20px;
+    height: auto;
+    opacity: 1;
+    background: $white;
+    transform: translateY(0);
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+.animateButton{
+    div{
+        &:first-child{
+            transform: rotate(45deg) translateY(1px);
+        }
+        &:last-child{
+            transform: rotate(-45deg) translateY(-1px) !important;
+        }
+    }
+}
+@media screen and (max-width: 772px){
+    .line{
+        .right{
+            font-size: 16px;
+        }
+        .button{
+            div{
+                width: 25px;
+            }
+        }
+    }
+    .content{
+        font-size: 14px;
+    }
+    .content-block{
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .line{
+        .right{
+            font-size: 14px;
+        }
+        .button{
+            width: 50px;
+            height: 50px;
+        }
+        height: 50px;
+    }
+    .content-block{
+        padding: 10px;
+    }
+}

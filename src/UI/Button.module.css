@@ -1,0 +1,29 @@
+.button {
+  padding: 15px 40px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.button a {
+  color: black;
+}
+
+@media screen and (max-width: 968px) {
+  .button {
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .button {
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .button {
+    padding: 15px 20px;
+  }
+}
+/*# sourceMappingURL=Button.module.css.map */

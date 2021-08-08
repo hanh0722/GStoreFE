@@ -1,0 +1,40 @@
+.layout{
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 15px;
+    position: relative;
+    h2{
+        font-weight: bold;
+        text-transform: capitalize;
+        text-align: center;
+        font-size: 35px;
+    }
+    & > p{
+        text-align: center;
+        color: gray;
+        font-size: 16px !important;
+        padding: 20px 0px;
+    }
+}
+
+@media screen and (max-width: 991px){
+    .layout{
+        max-width: 960px;
+    }
+}
+    
+@media screen and (max-width: 960px){
+    .layout{
+        h2{
+            font-size: 25px;
+        }
+    }
+}   
+
+@media screen and (max-width: 772px){
+    .layout{
+        h2{
+            font-size: 20px;
+        }
+    }
+}

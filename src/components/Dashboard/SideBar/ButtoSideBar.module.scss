@@ -1,0 +1,31 @@
+@import '../../../color/color';
+.button{
+    display: none;
+}
+@media screen and (max-width: 768px){
+    .button{
+        display: block;
+        position: fixed;
+        left: 0;
+        transform: translateY(-50%);
+        top: 50%;
+        width: 50px;
+        height: 50px;
+        background: $yellow;
+        svg{
+            font-size: 20px;
+            color: $white;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top-right-radius: 18px;
+        border-bottom-right-radius: 18px;
+        cursor: pointer;
+        z-index: 3;
+    }
+    
+    .button-none{
+        display: none;
+    }
+}

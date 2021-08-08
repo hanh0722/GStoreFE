@@ -1,0 +1,45 @@
+@import '../../color/color';
+
+.wave{
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  width: 200%;
+  z-index: -1;
+}
+.wave-1{
+  animation: wave 10s infinite linear alternate;
+  pointer-events: none;
+}
+.wave-2{
+  width: 300%;
+  animation: wave-1 10s infinite linear alternate;
+  pointer-events: none;
+}
+@keyframes wave {
+  from{
+    transform: translateX(0%);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+@keyframes wave-1{
+  from{
+    transform: translateX(-50%);
+  }
+  to{
+    transform: translateX(0%);
+  }
+}
+@media screen and (max-width: 1050px) {
+  .wave{
+    bottom: -50px;
+  }
+}
+
+@media screen and (max-width: 772px) {
+  .wave{
+    bottom: 0;
+  }
+}

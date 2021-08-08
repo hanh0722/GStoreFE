@@ -1,0 +1,33 @@
+@import '../../../color/color';
+.column {
+  margin-bottom: 50px;
+}
+.choosing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50px;
+}
+.sorting{
+    select{
+        padding: 6px 16px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        transition: all .5s;
+        &:focus{
+            border-color: $red;
+            outline: none;
+            box-shadow: 0px 2px 8px rgba($color: #000000, $alpha: .15);
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+  .input {
+    input {
+      width: 150px;
+      &:focus{
+          width: 180px;
+      }
+    }
+  }
+}

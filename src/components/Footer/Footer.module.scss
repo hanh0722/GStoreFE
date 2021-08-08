@@ -1,0 +1,72 @@
+@import '../../color/color';
+.container{
+    background: url('../../img/images/backgroundfooter.png');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    ul{
+        list-style: none;
+        color: $white;
+    }
+    padding: 50px 0px;
+}
+.icons{
+    svg{
+        margin-right: 15px;
+    }
+}
+.row{
+    a{
+        color: $white;
+    }
+}
+.logo{
+    img{
+        width: 150px;
+        height: auto;
+        margin: 20px;
+    }
+    p{
+        margin: 0;
+        color: $white;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: justify;
+    }
+}
+.list-items, .list-items-2{
+    li{
+        &:first-child{
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+    .content{
+        font-size: 15px;
+        padding: 20px 0px;
+        line-height: 30px;
+    }
+}
+.list-items-2{
+    .list-1{
+        padding-bottom: 20px;
+    }
+    li{
+        display: flex;
+        svg{
+            width: 20px;
+        }
+        p{
+            &:last-child{
+                width: calc(100% - 30px);
+            }
+        }
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width: 768px) {
+    .list-items{
+        padding: 50px 0px;
+        margin: 0;
+    }
+}

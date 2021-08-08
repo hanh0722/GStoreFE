@@ -1,0 +1,105 @@
+@import "../../color/color";
+.row {
+  img {
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+  }
+  p {
+    font-weight: bold;
+    padding-top: 20px;
+    margin: 0;
+  }
+  justify-content: space-between;
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-transform: capitalize !important;
+    margin: 20px 0px;
+  }
+  margin: 0;
+}
+.newest {
+  box-shadow: 0px 2px 8px rgba($color: #000000, $alpha: 0.2);
+  margin-bottom: 40px;
+  border-radius: 18px;
+  a{
+    font-size: 30px !important;
+  }
+}
+.news {
+  img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+  }
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 40px;
+  a {
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  &:last-child {
+    border: none;
+  }
+  p {
+    margin: 0;
+    padding-top: 20px;
+    font-weight: bold;
+  }
+  padding: 20px;
+  box-shadow: 0px 2px 8px rgba($color: #000000, $alpha: 0.2);
+}
+
+.col,
+.news {
+  padding: 0;
+  border-radius: 18px;
+  .content {
+    width: 100%;
+    padding: 30px 20px;
+    z-index: 2;
+    position: relative;
+    a {
+      transition: all 0.5s;
+      font-size: 22px ;
+    }
+  }
+  .date{
+    position: absolute;
+    top: -55px;
+    padding: 20px 30px;
+    background: $white;
+    box-shadow: 0px 2px 8px rgba($color: #000000, $alpha: .1);
+    border-radius: 10px;
+    transition: all .5s;
+    color: gray;
+  }
+  &:hover{
+    a{
+      color: $red;
+    }
+    .date{
+      background: $yellow;
+      color: $white;
+    }
+  }
+  svg{
+    margin-right: 10px;
+  }
+}
+.column{
+  padding-right: 15px;
+}
+
+@media screen and (max-width: 768px){
+  .column{
+    padding-right: 0;
+  }
+}

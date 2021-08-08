@@ -1,0 +1,22 @@
+@import "../../color/color";
+
+.container {
+  margin-top: 50px;
+}
+.swiper {
+  width: 100%;
+  padding-bottom: 50px;
+}
+.slide {
+  background-position: center !important;
+  background-size: cover !important;
+  width: 300px !important;
+  height: 300px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
