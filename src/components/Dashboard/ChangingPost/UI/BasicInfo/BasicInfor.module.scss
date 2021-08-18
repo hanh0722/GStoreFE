@@ -1,0 +1,29 @@
+@import '../../../../../color/color';
+.container{
+    a{
+        text-decoration: none;
+    }
+    text-align: center;
+    .row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button{
+            margin: 0px 15px;
+            font-weight: bold;
+            color: $white;
+        }
+        .btn-1{
+            background: $red;
+            &:hover{
+                background: $green;
+            }
+        }
+        .btn-2{
+            background: $yellow;
+            &:hover{
+                background: $blue;
+            }
+        }
+    }
+}

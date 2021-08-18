@@ -21,6 +21,12 @@
         }
     }
 }
+.loading{
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (max-width: 768px) {
   .input {
     input {

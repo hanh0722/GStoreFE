@@ -1,0 +1,43 @@
+.fade-light-enter{
+    opacity: 0;
+}
+.fade-light-enter-active{
+    opacity: 1;
+    animation: In .5s ease-in-out forwards;
+}
+.fade-light-exit{
+    opacity: 1;
+}
+.fade-light-exit-active{
+    opacity: 0;
+    animation: Out .5s ease-in-out forwards;
+}
+
+@keyframes In {
+    0%{
+        opacity: 0;
+        transform: translate(-50%, -100%);
+    }
+    50%{
+        opacity: 0.8;
+        transform: translate(-50%, 0%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+@keyframes Out {
+    0%{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    50%{
+        opacity: 0.8;
+        transform: translate(-50%, 0%);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-50%, -100%);
+    }
+}

@@ -15,6 +15,9 @@ import Screen from "./components/Pages/Screen";
 import AboutUs from "./components/Pages/AboutUs";
 import ChangingPost from "./components/Dashboard/ChangingPost/ChangingPost";
 import Users from "./components/Dashboard/Users/Users";
+import FormPost from "./components/Dashboard/FormPost/FormPost";
+import { buttonActions } from "./components/redux-store/button";
+import RegisterPage from './components/Register/RegisterPage'
 import {
   HomePageLink,
   FeatureLink,
@@ -23,6 +26,11 @@ import {
   AboutUsLink,
   BlogLink,
   BlogDetailLink,
+  ADMIN,
+  DASHBOARD_LINK,
+  NOTFOUND_LINK,
+  APP_INTRODUCTION,
+  SEARCH,
 } from "./components/link/link";
 import BlogDetail from "./components/Pages/BlogDetail";
 import NotFound from "./components/404NotFound/NotFound";
@@ -31,17 +39,29 @@ import MainDashBoard from "./components/Pages/MainDashboard";
 import BlogDashboard from "./components/Dashboard/BlogDashboard/BlogDashboard";
 import Register from "./components/Dashboard/Register/Register";
 import UserDetail from "./components/Dashboard/UserDetail/UserDetail";
+import SearchPage from "./components/Pages/SearchPage";
+import { adminInformation } from "./components/redux-store/Store";
+import TopButton from "./components/TopButton/TopButton";
 const App = () => {
+  const dispatch = useDispatch();
+  const location = useLocation();
   useEffect(() => {
     AOS.init({
       once: true,
       duration: 1000,
-      offset: 120,
-      delay: 200,
+      offset: 200,
+      delay: 500,
     });
-  }, []);
-  const dispatch = useDispatch();
-  const location = useLocation();
+    const scrollUpTop = () => {
+      const scrollY = window.pageYOffset;
+      if (scrollY > 200) {
+        dispatch(buttonActions.showUpHandler());
+      } else {
+        dispatch(buttonActions.removeHandler());
+      }
+    };
+    window.addEventListener("scroll", scrollUpTop);
+  }, [dispatch]);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
@@ -51,6 +71,7 @@ const App = () => {
       return;
     }
     dispatch(signInActions.SignIn(JSON.parse(signIn)));
+    dispatch(adminInformation());
   }, [dispatch]);
   const isClicked = useSelector((state) => state.layout.isClicked);
   const toggleHandler = () => {
@@ -59,9 +80,10 @@ const App = () => {
   return (
     <>
       <LinkNavigation toggle={toggleHandler} transform={isClicked} />
+      <TopButton />
       <Switch>
         <Route path={HomePageLink} exact component={Home} />
-        <Route path="/admin" exact>
+        <Route path={ADMIN.ADMIN_BASIC} exact>
           <Home />
         </Route>
         <Route path={FeatureLink} component={FeaturePage} />
@@ -69,21 +91,28 @@ const App = () => {
         <Route path={ScreenLink} component={Screen} />
         <Route path={AboutUsLink} component={AboutUs} />
         <Route path={BlogDetailLink} component={BlogDetail} />
-        <Route path='/404' component={NotFound}/>
-        <Route path="/ung-dung" component={AppIntroduction} />
-        <Route path="/admin/dang-nhap">
+        <Route path={NOTFOUND_LINK} component={NotFound} />
+        <Route path={APP_INTRODUCTION} component={AppIntroduction} />
+        <Route path={ADMIN.ADMIN_LOGIN} exact>
           <Signin />
         </Route>
-        <Route path={BlogLink}>
-          <Blog />
-        </Route>
+        <Route path={ADMIN.ADMIN_REGISTER} component={RegisterPage} />
+        <Route path={BlogLink} component={Blog} exact />
+        <Route path={SEARCH} component={SearchPage} />
         {/* Dashboard Admin */}
-        <Route path='/admin/dashboard/bang-dieu-khien' component={MainDashBoard}/>
-        <Route path='/admin/dashboard/tin-tuc' component={BlogDashboard} exact/>
-        <Route path='/admin/dashboard/tin-tuc/:name' component={ChangingPost}/>
-        <Route path='/admin/dashboard/dang-ky' component={Register}/>
-        <Route path='/admin/dashboard/user' component={Users} exact/>
-        <Route path='/admin/dashboard/user/:username' component={UserDetail}/>
+        <Route path={DASHBOARD_LINK.DASHBOARD} component={MainDashBoard} />
+        <Route path={DASHBOARD_LINK.BLOG} component={BlogDashboard} exact />
+        <Route path={DASHBOARD_LINK.CREATE_BLOG} component={FormPost} />
+        <Route
+          path={DASHBOARD_LINK.NESTED_ROUTE.FIX_BLOG}
+          component={ChangingPost}
+        />
+        <Route path={DASHBOARD_LINK.REGISTER} component={Register} />
+        <Route path={DASHBOARD_LINK.USER} component={Users} exact />
+        <Route
+          path={DASHBOARD_LINK.NESTED_ROUTE.USER_DETAIL}
+          component={UserDetail}
+        />
         <Route path="*" component={NotFound} />
       </Switch>
       <Footer />

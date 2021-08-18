@@ -1,0 +1,51 @@
+@import '../../../color/color';
+.images{
+    background: rgba($color: $blue, $alpha: .6);
+    padding: 20px;
+    background-image: url('../../../img/images/welcome-bg-2x-svg.25338f53.svg');
+    background-position: center;
+    background-size: cover;
+    p{
+        margin: 0;
+        padding-bottom: 20px;
+        font-weight: bold;
+        span{
+            color: $red;
+        }
+    }
+    button{
+        background: $yellow;
+        color: $white;
+        font-weight: bold;
+        &:hover{
+            background: $yellow;
+        }
+    }
+    a{
+        text-decoration: none;
+    }
+    border-radius: 10px;
+    .btn-2{
+        background: $red;
+    }
+    .btn{
+        margin-bottom: 20px;
+    }
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.chart, .row__up{
+    margin-top: 40px;
+}
+.infor-admin{
+    list-style: none;
+    padding-left: 20px;
+}
+@media screen and (max-width: 768px){
+    .row{
+        margin-top: 20px;
+    }
+}

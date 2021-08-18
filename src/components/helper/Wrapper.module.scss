@@ -9,6 +9,7 @@
     background-attachment: fixed;
     background-size: cover;
     color: white;
+    flex-direction: column;
     h2{
         font-weight: bold;
         margin: 0;
@@ -21,6 +22,10 @@
     a{
         text-decoration: none;
         color: white;
+        font-weight: bold;
+    }
+    p{
+        margin: 0;
         font-weight: bold;
     }
 }

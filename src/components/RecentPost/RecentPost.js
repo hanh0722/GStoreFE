@@ -14,7 +14,7 @@ const RecentPost = () => {
   const route = useRouteMatch();
   useEffect(() => {
     fetchingDataHandler({
-      url: "http://localhost:3001/post/nearest",
+      url: "http://localhost:3001/post/news/3",
     });
   }, [fetchingDataHandler]);
   let value;

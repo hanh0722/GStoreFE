@@ -30,6 +30,13 @@ const httpReducer = (state, action) =>{
                 ...state,
                 error: null
             }
+        case 'RESET':{
+            return {
+                data: null,
+                status: '',
+                error: null
+            }
+        }
         default:
             return initialState;
     }
@@ -67,10 +74,16 @@ const useHttp = () =>{
             type: 'RESET_ERROR'
         })
     }, []);
+    const resetState = () =>{
+        dispatch({
+            type: 'RESET'
+        })
+    }
     return {
         ...state,
         fetchingDataHandler,
-        setAgainHandler
+        setAgainHandler,
+        resetState
     }
 }
 

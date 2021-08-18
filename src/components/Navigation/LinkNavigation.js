@@ -71,7 +71,7 @@ const LinkNavigation = ({ toggle, transform }) => {
           })}
           <Route path="/admin">
             <NavLink style={{ textDecoration: "none" }} to="/admin/dang-nhap">
-              <Button className={styles.btn} variant="contained">
+              <Button className={styles.btn} onClick={toggle} variant="contained">
                 Admin
               </Button>
             </NavLink>

@@ -1,6 +1,8 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 import changePostSlice from "./change-post";
 import userSlice from "./change-user";
+import postsSlice from "./get-posts";
+import buttonSlice from "./button";
 const initialStateLayout = {
   isClicked: false,
   isDownloaded: false,
@@ -61,7 +63,9 @@ const store = configureStore({
     layout: layoutSlice.reducer,
     signin: signInSlice.reducer,
     post: changePostSlice.reducer,
-    user: userSlice.reducer
+    user: userSlice.reducer,
+    getPosts: postsSlice.reducer,
+    btn: buttonSlice.reducer
   },
 });
 

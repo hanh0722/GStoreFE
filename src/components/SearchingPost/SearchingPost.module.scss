@@ -1,0 +1,47 @@
+@import '../../color/color';
+.pagination{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    li{
+        padding: 20px;
+        margin-right: 10px;
+        box-shadow: 0px 2px 8px rgba($color: #000000, $alpha: .15);
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .15s;
+        border-radius: 50%;
+        &:hover{
+            background: $yellow;
+            color: $white;
+        }
+    }
+    .disabled-btn{
+        pointer-events: none;
+        opacity: .4;
+        color: gray;
+    }
+    .active{
+        background: $red;
+        color: $white;
+    }
+}
+.none{
+    text-align: center;
+    margin: 0;
+    font-size: 16px;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+        color: red;
+        font-weight: bold;
+        margin-left: 5px;
+    }
+}

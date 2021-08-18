@@ -5,10 +5,11 @@ import Wrapper from "../../helper/Wrapper";
 import SideBar from "../SideBar/SideBar";
 import SystemRight from "../RightSide/SystemRight";
 import { Redirect } from "react-router-dom";
+import {ADMIN} from '../../link/link';
 const Layout = (props) => {
   return (
     <>
-    {!localStorage.getItem('isSignedIn') && <Redirect to='/admin/dang-nhap'/>}
+    {!localStorage.getItem('isSignedIn') && <Redirect to={ADMIN.ADMIN_LOGIN}/>}
       <Wrapper title={props.title}>
         <Container>
           <Row className={styles.container}>

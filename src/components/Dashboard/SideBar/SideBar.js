@@ -21,7 +21,7 @@ const SideBar = () => {
   const renderSideBar = title.map((items, index) => {
     const path = RemoveUnicode(items);
     return (
-      <NavLink to={`/admin/dashboard/${path}`} key={index}>
+      <NavLink activeClassName={styles.active} to={`/admin/dashboard/${path}`} key={index}>
         <li>
           <FontAwesomeIcon icon={icons[index]} /> <span>{items}</span>
         </li>

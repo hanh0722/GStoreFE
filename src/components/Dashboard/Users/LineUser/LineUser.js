@@ -3,7 +3,7 @@ import styles from "../Users.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faTrashAlt } from "@fortawesome/free-regular-svg-icons";
 import { Link, useRouteMatch } from "react-router-dom";
-const LineUser = ({ username, name, id }) => {
+const LineUser = ({ username, name, id, onDelete }) => {
   const route = useRouteMatch();
   return (
     <tr>
@@ -15,7 +15,16 @@ const LineUser = ({ username, name, id }) => {
             <FontAwesomeIcon icon={faEye} />
           </span>
         </Link>
-        <span className={`${styles.btn} ${styles.delete}`}>
+        <span
+          onClick={() =>
+            onDelete({
+              username,
+              name,
+              id,
+            })
+          }
+          className={`${styles.btn} ${styles.delete}`}
+        >
           <FontAwesomeIcon icon={faTrashAlt} />
         </span>
       </td>

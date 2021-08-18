@@ -9,15 +9,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Helmet } from "react-helmet";
 import styles from "./BlogDashboard.module.scss";
-import Loading from "../../Loading/Loading";
+import Loading from "../../../UI/Loading/Loading";
 import RemoveUnicode from "../../RemoveUnicode/RemoveUnicode";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation, useRouteMatch } from "react-router-dom";
 const BlogDashboard = () => {
   const { fetchingDataHandler, data, status } = useHttp();
   const [title, setTitle] = useState("");
   const [type, setType] = useState("default");
   const history = useHistory();
   const location = useLocation();
+  const route = useRouteMatch();
   const params = new URLSearchParams(location.search);
   const sorting = params.get("sort");
   useEffect(() => {
@@ -25,16 +26,17 @@ const BlogDashboard = () => {
       fetchingDataHandler({
         url: "http://localhost:3001/get-all-posts",
       });
-    }
-    else{
+    } else {
       fetchingDataHandler({
-        url: `http://localhost:3001/post/${sorting}`
-      })
+        url: `http://localhost:3001/post/${sorting}`,
+      });
     }
+
   }, [fetchingDataHandler, type, sorting]);
   const changeHandler = (event) => {
     setTitle(event.target.value);
   };
+  
   const setPageHandler = () => {
     if (!data || data.length === 0 || status === "error") {
       return;
@@ -43,7 +45,6 @@ const BlogDashboard = () => {
       return items.title.toLowerCase().includes(title);
     });
     const renderPost = filterPost.map((items) => {
-      console.log(items.title);
       const transformLink = RemoveUnicode(items.title);
       return (
         <Col
@@ -76,7 +77,7 @@ const BlogDashboard = () => {
   };
   const changeSortingHandler = (event) => {
     setType(event.target.value);
-    history.push(`/admin/dashboard/tin-tuc?sort=${event.target.value}`);
+    history.push(`${route.path}?sort=${event.target.value}`);
   };
   return (
     <>
@@ -84,9 +85,8 @@ const BlogDashboard = () => {
         <title>Tin Tức - Dashboard Admin - GStoreVN</title>
       </Helmet>
       <Layout title="Tin Tức Dashboard">
-        {status === "pending" ? (
-          <Loading />
-        ) : (
+        {status === "pending" && <Loading className={styles.loading} />}
+        {status === "completed" && data && (
           <Container>
             <div className={styles.choosing}>
               <div className={styles.input}>
@@ -100,7 +100,10 @@ const BlogDashboard = () => {
                 </SearchField>
               </div>
               <div className={styles.sorting}>
-                <select value={sorting ? sorting : 'default'} onChange={changeSortingHandler}>
+                <select
+                  value={sorting ? sorting : "default"}
+                  onChange={changeSortingHandler}
+                >
                   <option value="default">Mặc định</option>
                   <option value="desc">Mới nhất</option>
                   <option value="asc">Cũ nhất</option>

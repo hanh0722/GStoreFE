@@ -74,7 +74,91 @@
 .delete{
     background: $red;
 }
-
+.fade-enter{
+    opacity: 0;
+}
+.fade-enter-active{
+    animation: row-block .5s ease-out forwards;
+}
+.fade-exit{
+    opacity: 1;
+}
+.fade-exit-active{
+    animation: row-none .5s ease-out forwards;
+}
+.loading-user{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba($color: #000000, $alpha: .5);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user__invalid{
+    svg{
+        color: red;
+    }
+    color: red;
+}
+.user__success{
+    svg{
+        color: $green;
+    }
+}
+.notification-enter-active{
+    opacity: 1 !important;
+    transform: translateX(0%) !important;
+}
+.notification-exit-active{
+    opacity: 0 !important;
+    transform: translateX(-100%) !important;
+}
+@keyframes remove-nof {
+    0%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    30%{
+        opacity: .8;
+        transform: translateX(20%);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+@keyframes row-block {
+    0%{
+        opacity: 0;
+        transform: translate(-50%, -100%);
+    };
+    50%{
+        opacity: 1;
+        transform: translate(-50%, 50%);  
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+@keyframes row-none {
+    0%{
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    };
+    50%{
+        opacity: .8;
+        transform: translate(-50%, 50%);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-50%, -100%);
+    }
+}
 @media screen and (max-width: 576px){
     .user-tb{
         td, th{

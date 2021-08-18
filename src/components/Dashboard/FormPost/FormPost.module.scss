@@ -1,0 +1,134 @@
+@import '../../../color/color';
+.form{
+    & > label{
+        font-weight: bold;
+        margin: 0;
+        padding: 10px 0px;
+    }
+    .btn{
+        width: 100%;
+        background: $yellow;
+        font-weight: bold;
+        color: $white;
+        &:hover{
+            background: $yellow;
+        }
+    }
+}
+.container{
+    padding: 20px;
+}
+.invalid{
+    color: red;
+    margin: 0;
+    padding: 20px 0px;
+    font-weight: bold;
+}
+.row{
+    margin: 0;
+    padding: 20px;
+    border: 2px dotted $yellow;
+    margin-top: 20px;
+    text-align: center;
+    p{
+        margin: 0;
+        padding-bottom: 20px;
+    }
+    .icon{
+        font-size: 40px;
+        color: gray;
+    }
+    .text{
+        line-height: 40px;
+    }
+}
+.list{
+    list-style: none;
+    li{
+        img{
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+        }
+        margin-top: 20px;
+        border: 1px solid $yellow;
+        border-radius: 14px;
+        box-shadow: 0px 2px 8px rgba($color: #000000, $alpha: .15);
+    }
+}
+.btn-close{
+    div{
+        width: 25px;
+        height: 2px;
+        &:first-child{
+            transform: rotate(-45deg) translateY(1px);
+        }
+        &:last-child{
+            transform: rotate(45deg) translateY(-2px);
+        }
+        background: $red;
+    }
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba($color: #000000, $alpha: .5);
+    z-index: 10;
+}
+.success{
+    p{
+        margin: 0;
+    }
+}
+.information{
+    text-align: start;
+    & > p{
+        text-align: center;
+        font-size: 15px !important;
+        padding: 20px 0px;
+    }
+    ul{
+        font-weight: normal !important;
+        list-style: none;
+        li{
+            span{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 1; /* number of lines to show */
+                -webkit-box-orient: vertical;
+            }
+            margin-bottom: 20px;
+        }
+    }
+}
+.line-btn{
+    button{
+        margin: 10px;
+        background: $yellow;
+        font-weight: bold;
+        color: $white;
+        &:hover{
+            background: $green;
+        }
+    }
+    a{
+        text-decoration: none;
+    }
+}

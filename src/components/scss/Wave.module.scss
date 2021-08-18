@@ -8,11 +8,13 @@
   z-index: -1;
 }
 .wave-1{
-  animation: wave 8s infinite linear alternate;
+  animation: wave 10s infinite linear alternate;
+  pointer-events: none;
 }
 .wave-2{
   width: 300%;
-  animation: wave-1 8s infinite linear alternate;
+  animation: wave-1 10s infinite linear alternate;
+  pointer-events: none;
 }
 @keyframes wave {
   from{

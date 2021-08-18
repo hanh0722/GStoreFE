@@ -23,12 +23,10 @@ const UserDetail = () => {
   const params = useParams();
   const [isTouched, setIsTouched] = useState(false);
   const [nameIsTouched, setNameIsTouched] = useState(false);
-  const [successFetching, setSuccessFetching] = useState(false);
   const {
     fetchingDataHandler,
     status: statusUploading,
     data: dataUploading,
-    error,
   } = useHttp();
   useEffect(() => {
     const fetchUser = async () => {

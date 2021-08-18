@@ -1,3 +1,4 @@
+@import '../../../color/color';
 .loading{
     position: fixed;
     top: 0;
@@ -9,4 +10,27 @@
     align-items: center;
     z-index: 3;
     background: rgba($color: #000000, $alpha: .5);
+}
+.close-modal{
+    div{
+        width: 20px;
+        height: 2px;
+        background: $red;
+        &:first-child{
+            transform: rotate(-45deg) translateY(1px);
+        }
+        &:last-child{
+            transform: rotate(45deg) translateY(-2px);
+        }
+    }
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .submit{
+        margin-top: 50px;
+    }
 }

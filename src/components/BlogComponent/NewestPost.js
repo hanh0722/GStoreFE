@@ -5,45 +5,38 @@ import { Link } from "react-router-dom";
 import BlogComponent from "./BlogComponent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarAlt } from "@fortawesome/free-regular-svg-icons";
-import { useRouteMatch } from "react-router-dom";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { useRouteMatch, useHistory } from "react-router-dom";
 import RecentPost from "../RecentPost/RecentPost";
 import useHttp from "../hook/use-http";
 import RemoveUnicode from "../RemoveUnicode/RemoveUnicode";
+import usePagination from "../hook/use-pagination";
+import PaginationBlog from "./PaginationBlog";
 const NewestPost = () => {
   const route = useRouteMatch();
-  const { fetchingDataHandler, data, status } = useHttp();
+  const history = useHistory();
+  const { fetchingDataHandler, data, status, error } = useHttp();
+  const {
+    nextPage,
+    prevPage,
+    pages,
+    currentPage,
+    paginationGroup,
+    changeThePage,
+    ourPagesTotal,
+  } = usePagination(data ? data : [], 2, 2);
   useEffect(() => {
     fetchingDataHandler({
       url: "http://localhost:3001/get-all-posts",
     });
   }, [fetchingDataHandler]);
 
-  let posts;
-  if (data && data.length > 0 && status === "completed") {
-    const filterPosts = data.filter((items, index) => {
-      return index !== 0;
-    });
-    const renderPost = filterPosts.map((items) => {
-      const pathLink = RemoveUnicode(items.title);
-      return (
-        <div key={items.id} className={styles.news}>
-          <img
-            src={require(`../../img/images/${items.image1}`).default}
-            alt=""
-          />
-          <div className={styles.content}>
-            <Link to={`${route.path}/${pathLink}?id=${items.id}`}>
-              {items.title}
-            </Link>
-            <p className={styles.date}>
-              <FontAwesomeIcon icon={faCalendarAlt} /> {items.dateblog}
-            </p>
-          </div>
-        </div>
-      );
-    });
-    posts = renderPost;
-  }
+  useEffect(() =>{
+    history.push(`${route.path}?page=${currentPage}`);
+  }, [currentPage, history, route.path])
   return (
     data &&
     data.length > 0 &&
@@ -83,11 +76,50 @@ const NewestPost = () => {
             lg={8}
             className={`${styles.col} ${styles.column}`}
           >
-            {posts}
+            {pages().map((items) => {
+              const pathLink = RemoveUnicode(items.title);
+              return (
+                <div key={items.id} className={styles.news}>
+                  <img
+                    src={require(`../../img/images/${items.image1}`).default}
+                    alt=""
+                  />
+                  <div className={styles.content}>
+                    <Link to={`${route.path}/${pathLink}?id=${items.id}`}>
+                      {items.title}
+                    </Link>
+                    <p className={styles.date}>
+                      <FontAwesomeIcon icon={faCalendarAlt} /> {items.dateblog}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+            <ul className={styles.pagination}>
+              <li
+                className={currentPage === 1 ? styles["disabled-btn"] : ""}
+                onClick={() => {prevPage()}}
+              >
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </li>
+              <PaginationBlog
+                numberOfPagination={paginationGroup}
+                changeThePage={changeThePage}
+                currentPage={currentPage}
+              />
+              <li
+                className={
+                  currentPage === ourPagesTotal ? styles["disabled-btn"] : ""
+                }
+                onClick={nextPage}
+              >
+                <FontAwesomeIcon icon={faChevronRight} />
+              </li>
+            </ul>
           </Col>
           <Col xs={12} sm={12} md={4} lg={4}>
-            <BlogComponent/>
-            <RecentPost/>
+            <BlogComponent />
+            <RecentPost />
           </Col>
         </Row>
       </>

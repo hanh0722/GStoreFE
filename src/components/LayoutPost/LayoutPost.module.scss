@@ -1,0 +1,58 @@
+@import '../../color/color';
+.container{
+    margin-bottom: 20px;
+    img{
+        width: 100%;
+        height: auto;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    p{
+        margin: 0;
+    }
+    .line, .link{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        -webkit-box-orient: vertical;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .btn{
+        svg{
+            margin-right: 10px;
+        }
+        font-weight: bold;
+        background: $red;
+        color: $white;
+        padding: 5px 10px;
+        &:hover{
+            background: $yellow;
+        }
+    }
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0px;
+    border-radius: 10px;
+    &:last-child{
+        border-bottom: none;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .container{
+        .content{
+            .link{
+                margin: 20px 0px;
+            }
+            .line{
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

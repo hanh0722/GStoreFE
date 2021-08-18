@@ -52,6 +52,7 @@ const Signin = () => {
           setIsValidSignIn(false);
         } else if (data.islocked) {
           setIsLocked(true);
+          return;
         } else {
           dispatch(signInActions.SignIn(data.id));
           localStorage.setItem("isSignedIn", data.id);

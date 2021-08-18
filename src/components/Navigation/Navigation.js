@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "../../layout/container/container";
+import ParticleComponent from "../Particle/Particle";
 import Section from "../Section/Section";
 import Wave from "./Wave";
 const Navigation = () => {
@@ -7,6 +8,7 @@ const Navigation = () => {
     <Container>
       <Section />
       <Wave/>
+      <ParticleComponent/>
     </Container>
   );
 };
